@@ -1,32 +1,16 @@
 import React from 'react';
-import './App.css';
 import Points from './components/Points';
+import List from './components/List';
+import Count from './components/Count';
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { number: 0, point: "" }
-  }
-  render() {
-    return (
+const App = () =>
       <div>
-        <button onClick={() => {
-          this.setState(
-            { number: this.state.number + 1 }
-          )
-        }
-        }>+</button>
-        {console.log(this.state.number)}
-        <button onClick={() => {
-          this.setState({
-            number: this.state.number - 1
-          })
-        }}>-</button>
-        <p>{this.state.number}</p>
+        <Count/>
         <Points/>
+        <List names={
+          ["An", "Steve", "Sarah", "Jan"]
+        }/>
       </div >
-    );
-  }
-}
+
 
 export default App;
