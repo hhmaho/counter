@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-
-var printPoint = "o"
+import Points from './components/Points';
 
 class App extends React.Component {
   constructor(props) {
@@ -24,21 +23,10 @@ class App extends React.Component {
           })
         }}>-</button>
         <p>{this.state.number}</p>
-        <button onClick={() => {
-          this.setState({
-            point: this.state.point.concat(printPoint)
-          })
-        }}>add point</button>
-        <button onClick={() => {
-          this.setState({
-            point: this.state.point.slice(1)
-          })
-        }}>remove</button>
-        <p>Points: {this.state.point}</p>
+        <Points/>
       </div >
     );
   }
 }
 
 export default App;
-test
