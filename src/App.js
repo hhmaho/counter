@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 
+var printPoint = "o"
+
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { number: 0 }
+    this.state = { number: 0, point: "" }
   }
   render() {
     return (
@@ -22,6 +24,17 @@ class App extends React.Component {
           })
         }}>-</button>
         <p>{this.state.number}</p>
+        <button onClick={() => {
+          this.setState({
+            point: this.state.point.concat(printPoint)
+          })
+        }}>add point</button>
+        <button onClick={() => {
+          this.setState({
+            point: this.state.point.slice(1)
+          })
+        }}>remove</button>
+        <p>Points: {this.state.point}</p>
       </div >
     );
   }
